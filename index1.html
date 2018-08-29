@@ -1,0 +1,103 @@
+<DOCTYPE! html>
+<html>
+
+<head>
+<title>My HomePage</title>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<noscript>Need javascript enabled to use this webpage</noscript>
+
+<script language="javascript" type="text/javascript">
+	// throw keyword is used in javascript to raise a built in exceptions or your customized exceptions.
+	// There are setTimeout(function,duration),setInterval(function,duration),clearTimeout(function,duration)
+	// null is a literal. It is used to refer reference variable. It is not a valid object instance so no memory allocation would 
+	// done for it.
+	
+	
+	
+	var imgObj=null;
+
+	function init(){
+		imgObj=document.getElementById('myImage');
+		imgObj.style.position='relative';
+		imgObj.style.left='0px';
+	}
+
+	function moveRight(){
+		imgObj.style.left=parseInt(imgObj.style.left)+10+'px';
+		animate=setTimeout(moveRight,20);
+		}
+
+	function stopRight(){
+		clearTimeout(animate);
+		imgObj.style.left='0px';
+
+		}
+
+	window.onload=init;
+
+</script>
+
+</head>
+<body>
+<div id="para">
+	
+	<h1>This is inside the division</h1>
+	<label>Name:<label>
+	<input type="text" name="customer"/>
+	<input type="button" value="WriteCookie" onclick="WriteCookie()"/>
+	
+	
+	<input type="button" value="Click" onclick="getclick()"/>
+	<a href="javascript:void(alert('warning))">Click Me</a>
+	<input type="button" value="print" onclick="window.print()"/>
+
+
+	<script type="text/javascript">
+	var mybook=new book("Hello","Ram");
+	document.write("Book name is "+mybook.subject+"</br>");
+	document.write("Book author is "+mybook.author+"</br>");
+
+	</script>
+	<input type="button" value="exception" onclick="myFunc();"/>
+	<a href="javascript:void(0);">My Link</a>
+
+<form action="login1.html" onsubmit="return validate();" name="myform">
+	<table cellspacing="2" cellpadding="2" border="1">
+		
+		<tr>
+			<td align="right">Name</td>
+			<td><input type="text" name="name"/></td>
+		</tr>
+		<tr>
+			<td align="right">Email</td>
+			<td><input type="email" name="email"/></td>
+		</tr>
+		<tr>
+			<td align="right">Zip Code</td>
+			<td><input type="text" name="zip"/></td>
+		</tr>
+		<tr>
+			<td align="right">Country</td>
+			<td>
+				<select name="country">
+					<option value="-1" selected>[choose yours]</option>
+					<option value="1">USA</option>
+					<option value="2">UK</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+		<td></td><td><input type="submit" value="Submit"/><input type="reset" value="Reset"/></td></tr>
+
+	</table>
+</form>
+
+<img id="myImage" src="Dubai.jpg"/><br>
+<input type="button" value="Move right" onclick="moveRight();"/>
+<input type="button" value="Stop" onclick="stopRight();"/>
+
+	
+</div>
+
+</body>
+</html>
